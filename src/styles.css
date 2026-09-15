@@ -122,22 +122,107 @@
 }
 
 @utility surface-card {
+  position: relative;
   background-image: var(--gradient-card);
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--color-border);
-  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-card), var(--shadow-inner-glass);
+  border: 1px solid oklch(0.8 0.12 300 / 30%);
+  backdrop-filter: blur(22px) saturate(150%);
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: var(--sheen-violet);
+  }
 }
 
 @utility surface-card-warm {
+  position: relative;
   background-image: var(--gradient-card-warm);
-  box-shadow: var(--shadow-card);
-  border: 1px solid oklch(0.62 0.14 70 / 45%);
+  box-shadow: var(--shadow-card), var(--shadow-inner-glass);
+  border: 1px solid oklch(0.85 0.16 75 / 40%);
+  backdrop-filter: blur(22px) saturate(160%);
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: var(--sheen-gold);
+  }
 }
 
 @utility surface-card-pink {
+  position: relative;
   background-image: var(--gradient-card-pink);
-  box-shadow: var(--shadow-card);
-  border: 1px solid oklch(0.62 0.2 345 / 45%);
+  box-shadow: var(--shadow-card), var(--shadow-inner-glass);
+  border: 1px solid oklch(0.78 0.22 345 / 42%);
+  backdrop-filter: blur(22px) saturate(160%);
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: var(--sheen-pink);
+  }
+}
+
+@utility surface-card-cyan {
+  position: relative;
+  background-image: var(--gradient-card-cyan);
+  box-shadow: var(--shadow-card), var(--shadow-inner-glass);
+  border: 1px solid oklch(0.82 0.15 200 / 40%);
+  backdrop-filter: blur(22px) saturate(160%);
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: var(--sheen-cyan);
+  }
+}
+
+@utility surface-card-lime {
+  position: relative;
+  background-image: var(--gradient-card-lime);
+  box-shadow: var(--shadow-card), var(--shadow-inner-glass);
+  border: 1px solid oklch(0.85 0.19 150 / 40%);
+  backdrop-filter: blur(22px) saturate(160%);
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: var(--sheen-lime);
+  }
+}
+
+@utility glass-panel {
+  background: oklch(0.99 0.02 300 / 8%);
+  border: 1px solid oklch(0.9 0.08 300 / 25%);
+  box-shadow: var(--shadow-card), var(--shadow-inner-glass);
+  backdrop-filter: blur(26px) saturate(150%);
+}
+
+@utility text-gradient-cyan {
+  background-image: var(--gradient-cyan);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-gold {
+  background-image: var(--gradient-gold);
+  background-clip: text;
+  color: transparent;
 }
 
 @utility brand-gradient {
