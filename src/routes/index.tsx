@@ -170,7 +170,11 @@ function Index() {
   const [activeForm, setActiveForm] = useState<ApplicationType | null>(null);
 
   return (
-    <main className="min-h-screen px-4 py-16 sm:px-6 lg:py-24">
+    <>
+      <SiteHeader />
+      <Hero />
+      <Features />
+      <main id="join" className="px-4 pb-16 sm:px-6 lg:pb-24">
       <div className="mx-auto max-w-6xl">
         <header className="animate-rise text-center">
           <span className="inline-flex rounded-full border border-border bg-secondary/60 px-5 py-2 text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase">
