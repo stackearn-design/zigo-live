@@ -184,6 +184,11 @@
     pointer-events: none;
     background: var(--sheen-violet);
   }
+
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 @utility surface-card-warm {
@@ -200,6 +205,11 @@
     inset: 0;
     pointer-events: none;
     background: var(--sheen-gold);
+  }
+
+  & > * {
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -218,6 +228,11 @@
     pointer-events: none;
     background: var(--sheen-pink);
   }
+
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 @utility surface-card-cyan {
@@ -234,6 +249,11 @@
     inset: 0;
     pointer-events: none;
     background: var(--sheen-cyan);
+  }
+
+  & > * {
+    position: relative;
+    z-index: 1;
   }
 }
 
