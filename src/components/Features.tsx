@@ -5,31 +5,43 @@ const features = [
     icon: Radio,
     title: "HD Live Streaming",
     text: "Go live in seconds with smooth, low-latency video and crystal clear audio.",
+    surface: "surface-card-pink",
+    iconClass: "bg-[linear-gradient(135deg,oklch(0.78_0.24_350),oklch(0.65_0.24_310))]",
   },
   {
     icon: MessageCircle,
     title: "Real-Time Chat",
     text: "Chat one-on-one or with the whole room while the stream is running.",
+    surface: "surface-card-cyan",
+    iconClass: "bg-[linear-gradient(135deg,oklch(0.8_0.16_195),oklch(0.68_0.2_255))]",
   },
   {
     icon: Gift,
     title: "Virtual Gifts",
     text: "Send and receive animated gifts that support your favorite creators.",
+    surface: "surface-card-warm",
+    iconClass: "bg-[linear-gradient(135deg,oklch(0.88_0.17_95),oklch(0.7_0.21_35))]",
   },
   {
     icon: Wallet,
     title: "Earn With Talent",
     text: "Convert gifts into real earnings with transparent host rewards.",
+    surface: "surface-card-lime",
+    iconClass: "bg-[linear-gradient(135deg,oklch(0.87_0.2_150),oklch(0.78_0.16_195))]",
   },
   {
     icon: Users,
     title: "Global Community",
     text: "Meet people from around the world through video and audio rooms.",
+    surface: "surface-card",
+    iconClass: "bg-[linear-gradient(135deg,oklch(0.68_0.24_300),oklch(0.66_0.25_350))]",
   },
   {
     icon: ShieldCheck,
     title: "Safe & Moderated",
     text: "Active moderation and reporting tools keep the community friendly.",
+    surface: "surface-card-cyan",
+    iconClass: "bg-[linear-gradient(135deg,oklch(0.82_0.15_200),oklch(0.72_0.2_285))]",
   },
 ];
 

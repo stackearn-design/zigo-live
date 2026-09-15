@@ -90,8 +90,8 @@ const secondaryCards: CardDef[] = [
     cta: "Become a Partner",
     icon: Handshake,
     tags: ["Business", "Growth", "Success"],
-    surface: "surface-card",
-    iconClass: "bg-[linear-gradient(135deg,oklch(0.6_0.2_255),oklch(0.62_0.24_300))]",
+    surface: "surface-card-cyan",
+    iconClass: "bg-[linear-gradient(135deg,oklch(0.8_0.16_195),oklch(0.68_0.2_255))]",
     action: { kind: "form", type: "PARTNER" },
   },
   {
@@ -112,8 +112,8 @@ const secondaryCards: CardDef[] = [
     cta: "Become an Agency",
     icon: Building2,
     tags: ["Recruit", "Manage", "Grow"],
-    surface: "surface-card",
-    iconClass: "bg-[linear-gradient(135deg,oklch(0.62_0.24_300),oklch(0.66_0.25_350))]",
+    surface: "surface-card-lime",
+    iconClass: "bg-[linear-gradient(135deg,oklch(0.87_0.2_150),oklch(0.78_0.16_195))]",
     action: { kind: "form", type: "AGENCY" },
   },
 ];
@@ -205,7 +205,7 @@ function Index() {
           ))}
         </section>
 
-        <section className="surface-card mt-8 grid grid-cols-2 gap-6 rounded-3xl p-8 lg:grid-cols-4">
+        <section className="glass-panel mt-8 grid grid-cols-2 gap-6 rounded-3xl p-8 lg:grid-cols-4">
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
