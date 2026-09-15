@@ -73,12 +73,14 @@
     oklch(0.66 0.25 350) 100%
   );
   --gradient-page: radial-gradient(
-      1000px 600px at 15% -10%,
-      oklch(0.35 0.16 300 / 55%) 0%,
-      transparent 60%
+      1000px 620px at 12% -10%,
+      oklch(0.55 0.26 300 / 55%) 0%,
+      transparent 62%
     ),
-    radial-gradient(900px 600px at 90% 10%, oklch(0.4 0.18 340 / 40%) 0%, transparent 60%),
-    radial-gradient(900px 700px at 50% 110%, oklch(0.32 0.15 280 / 45%) 0%, transparent 65%);
+    radial-gradient(900px 600px at 92% 4%, oklch(0.6 0.26 345 / 45%) 0%, transparent 62%),
+    radial-gradient(800px 600px at 85% 55%, oklch(0.6 0.2 200 / 30%) 0%, transparent 65%),
+    radial-gradient(800px 600px at 5% 60%, oklch(0.62 0.22 150 / 22%) 0%, transparent 65%),
+    radial-gradient(1000px 700px at 50% 112%, oklch(0.5 0.24 285 / 50%) 0%, transparent 68%);
   --gradient-cyan: linear-gradient(135deg, oklch(0.8 0.16 195) 0%, oklch(0.68 0.2 255) 100%);
   --gradient-gold: linear-gradient(135deg, oklch(0.88 0.17 95) 0%, oklch(0.7 0.21 35) 100%);
   --gradient-lime: linear-gradient(135deg, oklch(0.87 0.2 150) 0%, oklch(0.78 0.16 195) 100%);
