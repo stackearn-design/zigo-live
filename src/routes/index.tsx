@@ -14,6 +14,10 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { ApplicationDialog } from "@/components/ApplicationDialog";
+import { SiteHeader } from "@/components/SiteHeader";
+import { Hero } from "@/components/Hero";
+import { Features } from "@/components/Features";
+import { SiteFooter } from "@/components/SiteFooter";
 import type { ApplicationType } from "@/components/application-config";
 
 const PLAY_STORE_URL =
@@ -221,6 +225,8 @@ function Index() {
         type={activeForm}
         onOpenChange={(open) => !open && setActiveForm(null)}
       />
-    </main>
+      </main>
+      <SiteFooter />
+    </>
   );
 }
