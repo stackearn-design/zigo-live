@@ -14,7 +14,90 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      onboarding_requests: {
+        Row: {
+          admin_note: string | null
+          agency_name: string | null
+          city: string | null
+          company_name: string | null
+          country: string
+          created_at: string
+          current_platform: string | null
+          description: string
+          email: string
+          expected_monthly_business: string | null
+          experience: string | null
+          full_name: string
+          hear_about_zigo: string | null
+          id: string
+          investment_capacity: string | null
+          mobile_number: string
+          number_of_hosts: string | null
+          partner_type: string | null
+          social_media: string | null
+          state: string | null
+          status: string
+          type: string
+          updated_at: string
+          website: string | null
+          whatsapp_number: string
+        }
+        Insert: {
+          admin_note?: string | null
+          agency_name?: string | null
+          city?: string | null
+          company_name?: string | null
+          country: string
+          created_at?: string
+          current_platform?: string | null
+          description: string
+          email: string
+          expected_monthly_business?: string | null
+          experience?: string | null
+          full_name: string
+          hear_about_zigo?: string | null
+          id?: string
+          investment_capacity?: string | null
+          mobile_number: string
+          number_of_hosts?: string | null
+          partner_type?: string | null
+          social_media?: string | null
+          state?: string | null
+          status?: string
+          type: string
+          updated_at?: string
+          website?: string | null
+          whatsapp_number: string
+        }
+        Update: {
+          admin_note?: string | null
+          agency_name?: string | null
+          city?: string | null
+          company_name?: string | null
+          country?: string
+          created_at?: string
+          current_platform?: string | null
+          description?: string
+          email?: string
+          expected_monthly_business?: string | null
+          experience?: string | null
+          full_name?: string
+          hear_about_zigo?: string | null
+          id?: string
+          investment_capacity?: string | null
+          mobile_number?: string
+          number_of_hosts?: string | null
+          partner_type?: string | null
+          social_media?: string | null
+          state?: string | null
+          status?: string
+          type?: string
+          updated_at?: string
+          website?: string | null
+          whatsapp_number?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
