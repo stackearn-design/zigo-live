@@ -1,18 +1,22 @@
-import { Apple, Play, Sparkles } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { StoreButtons } from "@/components/StoreButtons";
 import heroPhones from "@/assets/zigo-hero-phones.png";
 
-const PLAY_STORE_URL =
-  "https://play.google.com/store/apps/details?id=com.stackearn.zigo.live";
+const trustPoints = [
+  "Live Video & Audio Rooms",
+  "Real-Time Chat",
+  "Virtual Gifts",
+  "Creator Community",
+];
 
 export function Hero() {
   return (
-    <section id="home" className="px-4 pt-12 pb-8 sm:px-6 lg:pt-20">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+    <section id="home" className="px-4 pt-12 pb-10 sm:px-6 lg:pt-20">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
         <div className="animate-rise">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-2 text-xs font-medium text-muted-foreground">
-            <Sparkles className="size-4 text-accent" /> More Than Just a Live App
+            <Sparkles className="size-4 text-accent" aria-hidden="true" /> More Than Just a Live App
           </span>
 
           <h1 className="mt-6 font-display text-5xl leading-[1.05] font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
@@ -24,52 +28,47 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Zigo Live brings people closer through live streaming, video &amp; audio calls,
-            real-time chat, virtual gifts and more. Meet new people, make friends, support your
-            favorite hosts and earn with your talent.
+            Zigo Live is a live streaming and social entertainment platform where people connect
+            through live video, audio chat rooms, real-time messaging, virtual gifts and interactive
+            experiences. Discover new people, join live rooms, support your favorite creators and
+            grow your community.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Button
-              asChild
-              className="brand-gradient h-14 px-7 text-base font-semibold text-primary-foreground hover:opacity-90"
-            >
-              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer">
-                <Play className="mr-3 size-6" />
-                <span className="text-left leading-tight">
-                  <span className="block text-[11px] font-normal opacity-80">Download on</span>
-                  Google Play
-                </span>
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="h-14 border-border bg-secondary/50 px-7 text-base font-semibold hover:bg-secondary"
-            >
-              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer">
-                <Apple className="mr-3 size-6" />
-                <span className="text-left leading-tight">
-                  <span className="block text-[11px] font-normal opacity-70">Download on</span>
-                  App Store
-                </span>
-              </a>
-            </Button>
-          </div>
+          <StoreButtons className="mt-8" />
 
-          <p className="mt-8 text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">1M+ people</span> are already streaming,
-            chatting and earning on Zigo Live.
+          <p className="mt-6 max-w-xl text-sm text-muted-foreground">
+            Join live conversations, discover creators, send virtual gifts and be part of a growing
+            global community.
           </p>
+
+          <ul className="mt-5 flex flex-wrap gap-3">
+            {trustPoints.map((point) => (
+              <li
+                key={point}
+                className="glass-panel inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium sm:text-sm"
+              >
+                <Check className="size-4 text-success" aria-hidden="true" />
+                {point}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="animate-rise flex justify-center lg:justify-end">
+        <div className="relative flex justify-center lg:justify-end">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -z-10 mx-auto max-w-xl rounded-full bg-[radial-gradient(circle_at_50%_45%,oklch(0.66_0.25_320/45%),transparent_65%)] blur-2xl"
+          />
           <img
             src={heroPhones}
-            alt="Zigo Live app showing a live stream and the explore screen on two phones"
+            alt="Zigo Live live streaming app with live video and creator discovery screens"
             width={1024}
             height={1024}
-            className="animate-float w-full max-w-lg drop-shadow-2xl"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            sizes="(min-width: 1024px) 40rem, 90vw"
+            className="animate-float w-full max-w-xl drop-shadow-2xl lg:max-w-[38rem]"
           />
         </div>
       </div>
