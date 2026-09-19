@@ -186,9 +186,9 @@ function Index() {
           <span className="inline-flex rounded-full border border-border bg-secondary/60 px-5 py-2 text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase">
             Join our community
           </span>
-          <h1 className="mt-6 text-4xl font-extrabold tracking-tight sm:text-6xl">
+          <h2 className="font-display mt-6 text-4xl font-extrabold tracking-tight sm:text-6xl">
             Become a Part of <span className="text-gradient">Zigo</span>
-          </h1>
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
             Different roles. A bigger community. Find your place in the Zigo family and be part of
             something amazing.
