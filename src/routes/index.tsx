@@ -1,16 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import {
-  ArrowRight,
-  Users,
-  Crown,
-  Handshake,
-  Coins,
-  Building2,
-  Star,
-  Gift,
-  Video,
-} from "lucide-react";
+import { ArrowRight, Users, Crown, Handshake, Coins, Building2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { ApplicationDialog } from "@/components/ApplicationDialog";
@@ -21,27 +11,57 @@ import { Stats } from "@/components/Stats";
 import { FinalCta } from "@/components/FinalCta";
 import { SiteFooter } from "@/components/SiteFooter";
 import type { ApplicationType } from "@/components/application-config";
+import { PLAY_STORE_URL, SITE_URL } from "@/lib/site";
 
-const PLAY_STORE_URL =
-  "https://play.google.com/store/apps/details?id=com.stackearn.zigo.live";
+const TITLE = "Zigo Live – Live Streaming, Audio Chat & Social Entertainment App";
+const DESCRIPTION =
+  "Join Zigo Live, a live streaming and social entertainment app for live video, audio chat rooms, real-time messaging, virtual gifts and creator interaction.";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Zigo Live",
+      description: DESCRIPTION,
+    },
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Zigo Live",
+      url: SITE_URL,
+    },
+    {
+      "@type": "MobileApplication",
+      name: "Zigo Live",
+      applicationCategory: "SocialNetworkingApplication",
+      operatingSystem: "Android",
+      url: PLAY_STORE_URL,
+      description: DESCRIPTION,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Zigo — Become a User, Host, Partner, Coin Seller or Agency" },
-      {
-        name: "description",
-        content:
-          "Join Zigo live entertainment: go live as a host, partner with us, sell coins or grow your agency. Apply in minutes.",
-      },
-      { property: "og:title", content: "Become a Part of Zigo" },
-      {
-        property: "og:description",
-        content:
-          "Different roles. A bigger community. Join Zigo as a user, host, partner, coin seller or agency.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: SITE_URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(structuredData),
+      },
     ],
   }),
   component: Index,
