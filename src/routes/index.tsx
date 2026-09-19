@@ -17,6 +17,8 @@ import { ApplicationDialog } from "@/components/ApplicationDialog";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
+import { Stats } from "@/components/Stats";
+import { FinalCta } from "@/components/FinalCta";
 import { SiteFooter } from "@/components/SiteFooter";
 import type { ApplicationType } from "@/components/application-config";
 
