@@ -140,12 +140,6 @@ const secondaryCards: CardDef[] = [
   },
 ];
 
-const stats = [
-  { icon: Users, value: "1M+", label: "Active Users" },
-  { icon: Video, value: "50K+", label: "Live Hosts" },
-  { icon: Gift, value: "10M+", label: "Gifts Sent" },
-  { icon: Star, value: "4.8", label: "App Rating" },
-];
 
 function RoleCard({ card, onApply }: { card: CardDef; onApply: (type: ApplicationType) => void }) {
   const Icon = card.icon;
