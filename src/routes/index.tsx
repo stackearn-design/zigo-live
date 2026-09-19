@@ -1,45 +1,67 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import {
-  ArrowRight,
-  Users,
-  Crown,
-  Handshake,
-  Coins,
-  Building2,
-  Star,
-  Gift,
-  Video,
-} from "lucide-react";
+import { ArrowRight, Users, Crown, Handshake, Coins, Building2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { ApplicationDialog } from "@/components/ApplicationDialog";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
+import { Stats } from "@/components/Stats";
+import { FinalCta } from "@/components/FinalCta";
 import { SiteFooter } from "@/components/SiteFooter";
 import type { ApplicationType } from "@/components/application-config";
+import { PLAY_STORE_URL, SITE_URL } from "@/lib/site";
 
-const PLAY_STORE_URL =
-  "https://play.google.com/store/apps/details?id=com.stackearn.zigo.live";
+const TITLE = "Zigo Live – Live Streaming, Audio Chat & Social Entertainment App";
+const DESCRIPTION =
+  "Join Zigo Live, a live streaming and social entertainment app for live video, audio chat rooms, real-time messaging, virtual gifts and creator interaction.";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Zigo Live",
+      description: DESCRIPTION,
+    },
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Zigo Live",
+      url: SITE_URL,
+    },
+    {
+      "@type": "MobileApplication",
+      name: "Zigo Live",
+      applicationCategory: "SocialNetworkingApplication",
+      operatingSystem: "Android",
+      url: PLAY_STORE_URL,
+      description: DESCRIPTION,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Zigo — Become a User, Host, Partner, Coin Seller or Agency" },
-      {
-        name: "description",
-        content:
-          "Join Zigo live entertainment: go live as a host, partner with us, sell coins or grow your agency. Apply in minutes.",
-      },
-      { property: "og:title", content: "Become a Part of Zigo" },
-      {
-        property: "og:description",
-        content:
-          "Different roles. A bigger community. Join Zigo as a user, host, partner, coin seller or agency.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: SITE_URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(structuredData),
+      },
     ],
   }),
   component: Index,
@@ -118,12 +140,6 @@ const secondaryCards: CardDef[] = [
   },
 ];
 
-const stats = [
-  { icon: Users, value: "1M+", label: "Active Users" },
-  { icon: Video, value: "50K+", label: "Live Hosts" },
-  { icon: Gift, value: "10M+", label: "Gifts Sent" },
-  { icon: Star, value: "4.8", label: "App Rating" },
-];
 
 function RoleCard({ card, onApply }: { card: CardDef; onApply: (type: ApplicationType) => void }) {
   const Icon = card.icon;
@@ -184,9 +200,9 @@ function Index() {
           <span className="inline-flex rounded-full border border-border bg-secondary/60 px-5 py-2 text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase">
             Join our community
           </span>
-          <h1 className="mt-6 text-4xl font-extrabold tracking-tight sm:text-6xl">
+          <h2 className="font-display mt-6 text-4xl font-extrabold tracking-tight sm:text-6xl">
             Become a Part of <span className="text-gradient">Zigo</span>
-          </h1>
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
             Different roles. A bigger community. Find your place in the Zigo family and be part of
             something amazing.
@@ -205,20 +221,6 @@ function Index() {
           ))}
         </section>
 
-        <section className="glass-panel mt-8 grid grid-cols-2 gap-6 rounded-3xl p-8 lg:grid-cols-4">
-          {stats.map((stat) => {
-            const Icon = stat.icon;
-            return (
-              <div key={stat.label} className="flex items-center justify-center gap-3">
-                <Icon className="size-8 text-accent" />
-                <div>
-                  <p className="text-2xl font-bold sm:text-3xl">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground sm:text-sm">{stat.label}</p>
-                </div>
-              </div>
-            );
-          })}
-        </section>
       </div>
 
       <ApplicationDialog
@@ -226,6 +228,8 @@ function Index() {
         onOpenChange={(open) => !open && setActiveForm(null)}
       />
       </main>
+      <Stats />
+      <FinalCta />
       <SiteFooter />
     </>
   );
