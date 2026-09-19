@@ -207,20 +207,6 @@ function Index() {
           ))}
         </section>
 
-        <section className="glass-panel mt-8 grid grid-cols-2 gap-6 rounded-3xl p-8 lg:grid-cols-4">
-          {stats.map((stat) => {
-            const Icon = stat.icon;
-            return (
-              <div key={stat.label} className="flex items-center justify-center gap-3">
-                <Icon className="size-8 text-accent" />
-                <div>
-                  <p className="text-2xl font-bold sm:text-3xl">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground sm:text-sm">{stat.label}</p>
-                </div>
-              </div>
-            );
-          })}
-        </section>
       </div>
 
       <ApplicationDialog
@@ -228,6 +214,8 @@ function Index() {
         onOpenChange={(open) => !open && setActiveForm(null)}
       />
       </main>
+      <Stats />
+      <FinalCta />
       <SiteFooter />
     </>
   );
